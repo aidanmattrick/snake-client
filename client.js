@@ -14,10 +14,24 @@ const connect = function() {
   conn.setEncoding('utf8');
 
   conn.on('data', (data) => {
-    console.log('Server says: ', data);
+    console.log('Server says: ', data); //
   });
 
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server"); //
+    conn.write('Name: AdM');
+  });
+
+  conn.on('data', (data) => {
+    console.log('Server says: ', data); //
+  });
+
+  
+
+  
   return conn;
+
+
 };
 
 module.exports = connect;
