@@ -22,13 +22,21 @@ const connect = function() {
     conn.write('Name: AdM');
   });
 
+  /*
+  conn.on('connect', (data) => {
+    conn.write('Move: up', data);
+    setInterval(() => {
+      conn.write('Move: up', data);
+    }, 1000);
+  });
+  */
+
   conn.on('data', (data) => {
     console.log('Server says: ', data); //
   });
 
-  
 
-  
+
   return conn;
 
 
